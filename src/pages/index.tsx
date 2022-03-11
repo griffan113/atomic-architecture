@@ -1,7 +1,8 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
+import { LoginTemplate } from '@/src/components/templates/';
 
 const Home: NextPage = () => {
-  return <h1>Dashgo</h1>;
+  return <LoginTemplate />;
 };
 
 export default Home;
