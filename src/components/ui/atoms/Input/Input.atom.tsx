@@ -11,7 +11,7 @@ interface InputProps extends ChakraInputProps {
   label?: string;
 }
 
-const Input: React.FC<InputProps> = ({ name, label, ...rest }) => {
+export const Input: React.FC<InputProps> = ({ name, label, ...rest }) => {
   return (
     <FormControl>
       {!!label && <FormLabel htmlFor={name}>{label}</FormLabel>}
@@ -30,5 +30,3 @@ const Input: React.FC<InputProps> = ({ name, label, ...rest }) => {
     </FormControl>
   );
 };
-
-export default Input;

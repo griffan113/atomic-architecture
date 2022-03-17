@@ -1,9 +1,9 @@
 import { Flex, Stack, Button } from '@chakra-ui/react';
 import React from 'react';
 
-import Input from '@/src/components/ui/atoms/Input/Input.atom';
+import { Input } from '@/src/components/ui/atoms';
 
-const LoginFormOrganism: React.FC = () => {
+export const LoginFormOrganism: React.FC = () => {
   return (
     <Flex
       as="form"
@@ -24,5 +24,3 @@ const LoginFormOrganism: React.FC = () => {
     </Flex>
   );
 };
-
-export default LoginFormOrganism;

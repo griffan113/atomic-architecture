@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 
 import { LoginTemplate } from '@/src/components/templates';
 
-const SignIn: NextPage = () => {
+const Login: NextPage = () => {
   return <LoginTemplate />;
 };
 
-export default SignIn;
+export default Login;
