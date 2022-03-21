@@ -1,7 +1,12 @@
 import React from 'react';
 import { Flex } from '@chakra-ui/react';
 
-import { Logo, HeaderSearchBox } from '@/components/ui/atoms';
+import {
+  Logo,
+  HeaderSearchBox,
+  HeaderButtonGroup,
+  HeaderProfileInfo,
+} from '@/components/ui/atoms';
 
 export const Header: React.FC = () => {
   return (
@@ -17,6 +22,8 @@ export const Header: React.FC = () => {
     >
       <Logo />
       <HeaderSearchBox />
+      <HeaderButtonGroup />
+      <HeaderProfileInfo />
     </Flex>
   );
 };

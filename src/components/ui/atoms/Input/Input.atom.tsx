@@ -21,8 +21,11 @@ export const Input: React.FC<InputProps> = ({ name, label, ...rest }) => {
         focusBorderColor="pink.500"
         bgColor="gray.900"
         variant="filled"
+        _focus={{
+          bgColor: 'gray.800',
+        }}
         _hover={{
-          bgColor: 'gray.900',
+          bgColor: 'gray.800',
         }}
         size="lg"
         {...rest}
