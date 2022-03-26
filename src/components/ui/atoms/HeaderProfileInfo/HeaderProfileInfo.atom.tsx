@@ -15,7 +15,7 @@ export const HeaderProfileInfo: React.FC = () => {
         size="md"
         name="Eliel"
         src="https://github.com/griffan113.png"
-        bgColor="gray.100"
+        bgColor="white"
       />
     </Flex>
   );
