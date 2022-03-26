@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Input } from '@/src/components/ui/atoms';
 
-export const LoginFormOrganism: React.FC = () => {
+export const LoginForm: React.FC = () => {
   return (
     <Flex
       as="form"
@@ -15,8 +15,18 @@ export const LoginFormOrganism: React.FC = () => {
       flexDir="column"
     >
       <Stack spacing="4">
-        <Input name="email" type="email" label="E-mail" />
-        <Input name="password" type="password" label="Password" />
+        <Input
+          placeholder="john@email.com"
+          name="email"
+          type="email"
+          label="E-mail"
+        />
+        <Input
+          placeholder="*******"
+          name="password"
+          type="password"
+          label="Password"
+        />
       </Stack>
       <Button type="submit" mt="6" colorScheme="pink" size="lg">
         Submit
