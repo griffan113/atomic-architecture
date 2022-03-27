@@ -1,8 +1,18 @@
 import React from 'react';
-import { Box, Flex, SimpleGrid, Text, theme } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  SimpleGrid,
+  Text,
+  theme,
+  useColorMode,
+} from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
+import { ApexOptions } from 'apexcharts';
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+
+import { Header, Sidebar } from '@/components/ui/organisms';
 
 const options: ApexOptions = {
   chart: {
@@ -60,10 +70,9 @@ const series = [
   },
 ];
 
-import { Header, Sidebar } from '@/components/ui/organisms';
-import { ApexOptions } from 'apexcharts';
-
 export const DashboardTemplate: React.FC = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <Flex direction="column" h="100vh">
       <Header />
@@ -77,13 +86,22 @@ export const DashboardTemplate: React.FC = () => {
           minChildWidth="320px"
           alignItems="flex-start"
         >
-          <Box pb="4" p="8" bg="themed.sub_bg" borderRadius={8}>
+          <Box
+            pb="4"
+            p="8"
+            bg={colorMode === 'dark' ? 'gray.800' : 'gray.50'}
+            borderRadius={8}
+          >
             <Text fontSize="large" mb="4">
               Inscritos da Semana
             </Text>
             <Chart options={options} series={series} type="area" height={160} />
           </Box>
-          <Box p="8" bg="themed.sub_bg" borderRadius={8}>
+          <Box
+            p="8"
+            bg={colorMode === 'dark' ? 'gray.800' : 'gray.50'}
+            borderRadius={8}
+          >
             <Text fontSize="large" mb="4">
               Taxa de Abertura
             </Text>

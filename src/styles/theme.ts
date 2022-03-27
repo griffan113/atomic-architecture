@@ -3,10 +3,6 @@ import { mode } from '@chakra-ui/theme-tools';
 
 export const theme = extendTheme({
   colors: {
-    themed: props => ({
-      sub_bg: mode('gray.800', 'gray.50')(props),
-      color: mode('gray.900', 'gray.50')(props),
-    }),
     gray: {
       '900': '#181B23',
       '800': '#1F2029',
@@ -32,6 +28,6 @@ export const theme = extendTheme({
       },
     }),
   },
-  initialColorMode: 'dark',
+  initialColorMode: 'light',
   useSystemColorMode: false,
 });

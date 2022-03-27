@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
       px="6"
       align="center"
     >
-      <Logo />
+      <Logo w="64" />
       <HeaderSearchBox />
       <HeaderButtonGroup />
       <HeaderProfileInfo />

@@ -19,7 +19,7 @@ export const HeaderButtonGroup: React.FC = () => {
         py="1"
         color="gray.300"
         borderRightWidth={1}
-        borderColor="gray.700"
+        borderColor={colorMode === 'dark' ? 'gray.700' : 'gray.100'}
       >
         <Button
           onClick={toggleColorMode}

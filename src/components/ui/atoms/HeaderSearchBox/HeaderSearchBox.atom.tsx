@@ -1,8 +1,10 @@
 import React from 'react';
-import { Flex, Icon, Input } from '@chakra-ui/react';
+import { Flex, Icon, Input, useColorMode } from '@chakra-ui/react';
 import { RiSearchLine } from 'react-icons/ri';
 
 export const HeaderSearchBox: React.FC = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <Flex
       as="label"
@@ -14,11 +16,11 @@ export const HeaderSearchBox: React.FC = () => {
       alignSelf="center"
       color="gray.200"
       position="relative"
-      bg="gray.800"
+      bgColor={colorMode === 'dark' ? 'gray.800' : 'gray.50'}
       borderRadius="full"
     >
       <Input
-        color="gray.50"
+        color={colorMode === 'dark' ? 'gray.300' : 'gray.500'}
         variant="unstyled"
         px="4"
         mr="4"
