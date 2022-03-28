@@ -4,3 +4,4 @@ export * from './HeaderSearchBox';
 export * from './HeaderButtonGroup';
 export * from './HeaderProfileInfo';
 export * from './DashboardChartGrid';
+export * from './UsersListTable';

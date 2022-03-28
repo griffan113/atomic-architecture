@@ -5,7 +5,7 @@ export const HeaderProfileInfo: React.FC = () => {
   return (
     <Flex align="center">
       <Box mr="4" textAlign="right">
-        <Text>Eliel</Text>
+        <Text>Eliel M. Gaspar</Text>
         <Text color="gray.300" fontSize="small">
           eliel@gmail.com
         </Text>
