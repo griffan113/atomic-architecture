@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { UsersTemplate } from '@/components/templates/Users';
+import { UsersTemplate } from '@/components/templates';
 
 const Users: NextPage = () => {
   return (

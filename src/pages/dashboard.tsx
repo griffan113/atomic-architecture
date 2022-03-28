@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { DashboardTemplate } from '@/components/templates/Dashboard';
+import { DashboardTemplate } from '@/components/templates';
 
 const Dashboard: NextPage = () => {
   return (

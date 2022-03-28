@@ -11,7 +11,7 @@ import {
 import { RiAddLine, RiUserFill } from 'react-icons/ri';
 
 import { Header, Sidebar } from '@/components/ui/organisms';
-import { UsersListTable } from '@/components/ui/atoms';
+import { UsersListTable, Pagination } from '@/components/ui/atoms';
 
 export const UsersTemplate: React.FC = () => {
   const { colorMode } = useColorMode();
@@ -48,6 +48,7 @@ export const UsersTemplate: React.FC = () => {
             </Button>
           </Flex>
           <UsersListTable />
+          <Pagination />
         </Box>
       </Flex>
     </Box>

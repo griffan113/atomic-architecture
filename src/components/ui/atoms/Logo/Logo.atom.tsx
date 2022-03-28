@@ -1,7 +1,7 @@
 import { ChakraProps, Text } from '@chakra-ui/react';
 import React from 'react';
 
-type LogoProps = {} & ChakraProps;
+type LogoProps = ChakraProps;
 
 export const Logo: React.FC<LogoProps> = ({ ...props }) => {
   return (
