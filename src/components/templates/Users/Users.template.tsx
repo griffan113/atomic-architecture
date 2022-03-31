@@ -11,7 +11,8 @@ import {
 import { RiAddLine, RiUserFill } from 'react-icons/ri';
 
 import { Header, Sidebar } from '@/components/ui/organisms';
-import { UsersListTable, Pagination } from '@/components/ui/atoms';
+import { UsersListTable } from '@/components/ui/atoms';
+import { Pagination } from '@/components/ui/molecules';
 
 export const UsersTemplate: React.FC = () => {
   const { colorMode } = useColorMode();

@@ -5,4 +5,5 @@ export * from './HeaderButtonGroup';
 export * from './HeaderProfileInfo';
 export * from './DashboardChartGrid';
 export * from './UsersListTable';
-export * from './Pagination';
+export * from './SidebarNavLink';
+export * from './PaginationButton';

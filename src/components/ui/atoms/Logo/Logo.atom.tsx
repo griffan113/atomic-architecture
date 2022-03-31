@@ -5,7 +5,12 @@ type LogoProps = ChakraProps;
 
 export const Logo: React.FC<LogoProps> = ({ ...props }) => {
   return (
-    <Text {...props} fontSize="3xl" fontWeight="bold" letterSpacing="tight">
+    <Text
+      {...props}
+      fontSize={['2xl', '3xl']}
+      fontWeight="bold"
+      letterSpacing="tight"
+    >
       dashgo
       <Text as="span" ml="1" color="pink.500">
         .
