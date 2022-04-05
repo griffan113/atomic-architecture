@@ -12,28 +12,33 @@ import {
   Checkbox,
   Td,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { RiPencilLine } from 'react-icons/ri';
 
 export const UsersListTable = () => {
   const { colorMode } = useColorMode();
+  const isDesktop = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
 
   return (
     <Table colorScheme={colorMode === 'dark' ? 'gray' : 'blackAlpha'}>
       <Thead>
         <Tr>
-          <Th px="6" color="gray.300" width="8">
+          <Th px={['4', '4', '6']} color="gray.300" width="8">
             <Checkbox colorScheme="pink" />
           </Th>
           <Th>User</Th>
-          <Th>Created At</Th>
+          {isDesktop && <Th>Created At</Th>}
           <Th width="3"></Th>
         </Tr>
       </Thead>
       <Tbody>
         {new Array(3).fill(0).map((_, index) => (
           <Tr key={index}>
-            <Td px="6">
+            <Td px={['4', '4', '6']}>
               <Checkbox colorScheme="pink" />
             </Td>
             <Td>
@@ -44,7 +49,7 @@ export const UsersListTable = () => {
                 </Text>
               </Box>
             </Td>
-            <Td>28 de Março de 2022</Td>
+            {isDesktop && <Td>28 de Março de 2022</Td>}
             <Td>
               <Button
                 as="a"
@@ -52,9 +57,9 @@ export const UsersListTable = () => {
                 size="sm"
                 fontSize="sm"
                 colorScheme="purple"
-                leftIcon={<Icon as={RiPencilLine} fontSize="20" />}
+                leftIcon={isDesktop && <Icon as={RiPencilLine} fontSize="20" />}
               >
-                Edit
+                {isDesktop ? 'Edit' : <Icon as={RiPencilLine} fontSize="20" />}
               </Button>
             </Td>
           </Tr>
