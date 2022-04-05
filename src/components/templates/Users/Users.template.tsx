@@ -9,10 +9,12 @@ import {
   HStack,
 } from '@chakra-ui/react';
 import { RiAddLine, RiUserFill } from 'react-icons/ri';
+import Link from 'next/link';
 
 import { Header, Sidebar } from '@/components/ui/organisms';
 import { UsersListTable } from '@/components/ui/atoms';
 import { Pagination } from '@/components/ui/molecules';
+import { routesPaths } from '@/src/routes/routesPaths';
 
 export const UsersTemplate: React.FC = () => {
   const { colorMode } = useColorMode();
@@ -37,16 +39,18 @@ export const UsersTemplate: React.FC = () => {
                 Users
               </Heading>
             </HStack>
-            <Button
-              as="a"
-              cursor="pointer"
-              size="sm"
-              fontSize="sm"
-              colorScheme="pink"
-              leftIcon={<Icon as={RiAddLine} fontSize="20" />}
-            >
-              Create New
-            </Button>
+            <Link passHref href={routesPaths.USERS.CREATE}>
+              <Button
+                as="a"
+                cursor="pointer"
+                size="sm"
+                fontSize="sm"
+                colorScheme="pink"
+                leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+              >
+                Create New
+              </Button>
+            </Link>
           </Flex>
           <UsersListTable />
           <Pagination />

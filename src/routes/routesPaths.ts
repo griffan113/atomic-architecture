@@ -1,4 +1,8 @@
 export const routesPaths = {
+  LOGIN: '/',
   DASHBOARD: '/dashboard',
-  USERS: '/users',
+  USERS: {
+    MAIN: '/users',
+    CREATE: '/users/create',
+  },
 };

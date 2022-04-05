@@ -13,9 +13,11 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { RiUserAddFill } from 'react-icons/ri';
+import Link from 'next/link';
 
 import { Header, Sidebar } from '@/components/ui/organisms';
 import { Input } from '@/components/ui/atoms';
+import { routesPaths } from '@/src/routes/routesPaths';
 
 export const CreateUserTemplate: React.FC = () => {
   const { colorMode } = useColorMode();
@@ -61,13 +63,16 @@ export const CreateUserTemplate: React.FC = () => {
 
           <Flex mt={['6', '8']} justify="flex-end">
             <HStack>
-              <Button
-                bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'gray.300'}
-                color={colorMode === 'dark' ? 'white' : 'gray.700'}
-              >
-                Cancelar
-              </Button>
-              <Button colorScheme="pink">Salvar</Button>
+              <Link passHref href={routesPaths.USERS.MAIN}>
+                <Button
+                  as="a"
+                  bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'gray.300'}
+                  color={colorMode === 'dark' ? 'white' : 'gray.700'}
+                >
+                  Cancel
+                </Button>
+              </Link>
+              <Button colorScheme="pink">Create</Button>
             </HStack>
           </Flex>
         </Box>
