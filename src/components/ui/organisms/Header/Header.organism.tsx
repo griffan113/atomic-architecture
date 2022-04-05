@@ -1,5 +1,6 @@
 import React from 'react';
-import { Flex, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Icon, IconButton, useBreakpointValue } from '@chakra-ui/react';
+import { RiMenu5Line } from 'react-icons/ri';
 
 import {
   Logo,
@@ -7,8 +8,11 @@ import {
   HeaderButtonGroup,
   HeaderProfileInfo,
 } from '@/components/ui/atoms';
+import { useDrawer } from '@/src/hooks/drawer';
 
 export const Header: React.FC = () => {
+  const { onOpen } = useDrawer();
+
   const isDesktop = useBreakpointValue({
     base: false,
     lg: true,
@@ -25,6 +29,17 @@ export const Header: React.FC = () => {
       px="6"
       align="center"
     >
+      {!isDesktop && (
+        <IconButton
+          aria-label="Open Drawer"
+          icon={<Icon as={RiMenu5Line} />}
+          fontSize="24"
+          onClick={onOpen}
+          mr="2"
+          bg="transparent"
+          size="sm"
+        />
+      )}
       <Logo w="64" />
       {isDesktop && <HeaderSearchBox />}
       <HeaderButtonGroup />

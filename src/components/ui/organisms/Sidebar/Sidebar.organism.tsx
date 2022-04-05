@@ -1,28 +1,48 @@
 import React from 'react';
-import { Box, Stack } from '@chakra-ui/react';
 import {
-  RiContactsLine,
-  RiDashboardLine,
-  RiGitMergeLine,
-  RiInputMethodLine,
-} from 'react-icons/ri';
+  Box,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+  useBreakpointValue,
+  useColorMode,
+} from '@chakra-ui/react';
 
-import { SidebarNavSection } from '@/components/ui/molecules';
-import { SidebarNavLink } from '@/components/ui/atoms';
+import { SidebarNav } from '@/components/ui/organisms';
+import { useDrawer } from '@/src/hooks/drawer';
 
 export const Sidebar: React.FC = () => {
+  const { colorMode } = useColorMode();
+  const { onClose, isOpen } = useDrawer();
+
+  const isDrawerSidebar = useBreakpointValue({
+    base: true,
+    lg: false,
+  });
+
+  if (isDrawerSidebar) {
+    return (
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay>
+          <DrawerContent bg={colorMode === 'dark' ? 'gray.800' : 'gray.50'}>
+            <DrawerCloseButton mt="6" />
+            <DrawerHeader>Navigation</DrawerHeader>
+
+            <DrawerBody>
+              <SidebarNav />
+            </DrawerBody>
+          </DrawerContent>
+        </DrawerOverlay>
+      </Drawer>
+    );
+  }
+
   return (
     <Box as="aside" w="64" mr="8">
-      <Stack spacing="12" align="flex-start">
-        <SidebarNavSection title="GERAL">
-          <SidebarNavLink icon={RiDashboardLine}>Dashboard</SidebarNavLink>
-          <SidebarNavLink icon={RiContactsLine}>Users</SidebarNavLink>
-        </SidebarNavSection>
-        <SidebarNavSection title="AUTOMATION">
-          <SidebarNavLink icon={RiInputMethodLine}>Forms</SidebarNavLink>
-          <SidebarNavLink icon={RiGitMergeLine}>Automation</SidebarNavLink>
-        </SidebarNavSection>
-      </Stack>
+      <SidebarNav />
     </Box>
   );
 };
