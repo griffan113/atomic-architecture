@@ -68,7 +68,7 @@ export const DashboardChartGrid: React.FC = () => {
     <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
       <Box
         pb="4"
-        p="8"
+        p={['6', '8']}
         bg={colorMode === 'dark' ? 'gray.800' : 'gray.50'}
         borderRadius={8}
       >
@@ -78,7 +78,7 @@ export const DashboardChartGrid: React.FC = () => {
         <Chart options={options} series={series} type="area" height={160} />
       </Box>
       <Box
-        p="8"
+        p={['6', '8']}
         bg={colorMode === 'dark' ? 'gray.800' : 'gray.50'}
         borderRadius={8}
       >
