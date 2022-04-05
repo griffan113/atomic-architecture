@@ -31,7 +31,7 @@ export const CreateUserTemplate: React.FC = () => {
           flex="1"
           borderRadius={8}
           bg={colorMode === 'dark' ? 'gray.800' : 'gray.50'}
-          p="8"
+          p={['6', '8']}
         >
           <HStack>
             <Icon as={RiUserAddFill} fontSize="25" />
@@ -43,13 +43,13 @@ export const CreateUserTemplate: React.FC = () => {
             my="6"
             borderColor={colorMode === 'dark' ? 'gray.700' : 'gray.100'}
           />
-          <VStack spacing="8">
-            <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
+          <VStack spacing={['6', '8']}>
+            <SimpleGrid minChildWidth="240px" spacing={['6', '8']} w="100%">
               <Input name="name" label="Full Name" />
               <Input name="email" type="email" label="E-mail" />
             </SimpleGrid>
 
-            <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
+            <SimpleGrid minChildWidth="240px" spacing={['6', '8']} w="100%">
               <Input name="password" type="password" label="Password" />
               <Input
                 name="password_confirmation"
@@ -59,7 +59,7 @@ export const CreateUserTemplate: React.FC = () => {
             </SimpleGrid>
           </VStack>
 
-          <Flex mt="8" justify="flex-end">
+          <Flex mt={['6', '8']} justify="flex-end">
             <HStack>
               <Button
                 bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'gray.300'}
