@@ -54,7 +54,7 @@ const options: ApexOptions = {
   },
 };
 
-const series = [
+const series: ApexAxisChartSeries | ApexNonAxisChartSeries = [
   {
     name: 'Series One',
     data: [30, 40, 45, 50, 49, 60, 70, 91],

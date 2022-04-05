@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '@chakra-ui/react';
+import { Flex, useBreakpointValue } from '@chakra-ui/react';
 
 import {
   Logo,
@@ -9,6 +9,11 @@ import {
 } from '@/components/ui/atoms';
 
 export const Header: React.FC = () => {
+  const isDesktop = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Flex
       as="header"
@@ -21,9 +26,9 @@ export const Header: React.FC = () => {
       align="center"
     >
       <Logo w="64" />
-      <HeaderSearchBox />
+      {isDesktop && <HeaderSearchBox />}
       <HeaderButtonGroup />
-      <HeaderProfileInfo />
+      <HeaderProfileInfo showProfileData={isDesktop} />
     </Flex>
   );
 };
